@@ -1,0 +1,14 @@
+﻿Implementer en brusautomat.
+
+Ulike drikker har ulik pris.
+Automaten har en lagerbeholdning.
+Man kan putte på mynter (1kr, 5kr, 10kr, 20kr).
+
+Man trykker på en knapp for en bestemt drikk 
+	- hvis man har puttet på nok får man denne og saldoen reduseres tilsvarende.
+	- Det finnes en knapp for å få gjeldende saldo tilbake.
+
+- Trenger å legge til flere brustyper med ulike priser
+- Trenger å håndtere brukervalg (console.readline)
+- Finne og execute rett kommando utfra brukerinput ( sjekk commandlistekstensions- klassen)
+- Trenger selve funksjonaliteten i moneyhandling
