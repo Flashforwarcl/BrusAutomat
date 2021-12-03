@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Dynamic;
+using System.Linq;
+using BrusAutomat.Storage;
 
 namespace BrusAutomat
 {
-    public class HandleInput
+    public class HandleInput : IHandleInput
     {
         public static string Input { get; set; }
         public static string Response { get; set; }
@@ -27,10 +30,17 @@ namespace BrusAutomat
          return command.ToLower() switch
                     {
                         "help" => Help(),
-                        "list" => list(),
+                        "list" => List(),
+                        "Buy" => Buy(),
                         "clear" => Clear(),
+                        "exit" => CloseApplication(),
                         _ => UnknownCommand()
                     };
+        }
+
+        private static string Buy()
+        {
+            throw new NotImplementedException();
         }
 
         public static string Help()
@@ -38,19 +48,23 @@ namespace BrusAutomat
             return "Test of Help()";
         }
 
-        public static string list()
+        public static string List()
         {
-            return "Test of list()";
+            var products = Program.items.Aggregate<Item, string>(null, (current, item) => current + $"\n{item.Name}");
+            return $"Here is a list of products:{products}";
         }
 
-        public static string UnknownCommand()
-        {
-            return "Unknown command";
-        }
+        public static string UnknownCommand() => "Unknown command";
 
         public static string Clear()
         {
             Console.Clear();
+            return "";
+        }
+
+        public static string CloseApplication()
+        {
+            Checks.IsRunning = false;
             return "";
         }
     }
