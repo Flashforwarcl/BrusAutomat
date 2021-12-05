@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Dynamic;
 using System.Linq;
-using BrusAutomat.Storage;
 
 namespace BrusAutomat
 {

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using StorageUnit.Items;
 
-namespace BrusAutomat.Storage
+namespace StorageUnit.Storage
 {
     class HorizontalStorage
     {
@@ -21,7 +18,7 @@ namespace BrusAutomat.Storage
         {
             for (var i = 0; i < Width; i++)
             {
-              HorizontalList.Add(new DepthStorage(Depth, new Stack<Item>()));
+              HorizontalList.Add(new DepthStorage(Depth, new Stack<IItems>()));
             }
         }
     }
