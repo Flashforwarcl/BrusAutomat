@@ -1,4 +1,4 @@
-﻿namespace StorageUnit.Items
+﻿namespace Storage.Items
 {
     public interface IItems
     {

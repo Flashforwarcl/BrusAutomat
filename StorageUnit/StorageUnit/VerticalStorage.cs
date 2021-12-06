@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace StorageUnit.Storage
+namespace Storage.StorageUnit
 {
-    class VerticalStorage
+    public class VerticalStorage
     {
         public int Height { get; set; }
         public int Depth { get; set; }

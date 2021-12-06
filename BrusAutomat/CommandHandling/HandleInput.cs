@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
+using Storage.Items;
 
-namespace BrusAutomat
+namespace BrusAutomat.CommandHandling
 {
-    public class HandleInput : IHandleInput
+    public class HandleInput
     {
         public static string Input { get; set; }
         public static string Response { get; set; }
@@ -29,7 +30,7 @@ namespace BrusAutomat
                     {
                         "help" => Help(),
                         "list" => List(),
-                        "Buy" => Buy(),
+                        "buy" => Buy(),
                         "clear" => Clear(),
                         "exit" => CloseApplication(),
                         _ => UnknownCommand()
@@ -48,7 +49,7 @@ namespace BrusAutomat
 
         public static string List()
         {
-            var products = Program.items.Aggregate<Item, string>(null, (current, item) => current + $"\n{item.Name}");
+            var products = Program.Drinks.Aggregate<IItems, string>(null, (current, item) => current + $"\n{item.Name}");
             return $"Here is a list of products:{products}";
         }
 

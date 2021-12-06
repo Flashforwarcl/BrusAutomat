@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
-using StorageUnit.Items;
+using Storage.Items;
 
-
-namespace StorageUnit.Storage
+namespace Storage.StorageUnit
 {
-    class StorageUnit
+    public class Unit
     {
         public VerticalStorage Storage;
 
-        public StorageUnit(int height, int width, int depth)
+        public Unit(int height, int width, int depth)
         {
             Storage = new VerticalStorage(height, width, depth,new List<HorizontalStorage>(height));
             Storage.CreateVerticalStorage();

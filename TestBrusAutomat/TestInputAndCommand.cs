@@ -1,6 +1,7 @@
 ﻿using BrusAutomat;
 using NUnit.Framework;
 using System.Collections.Generic;
+using BrusAutomat.CommandHandling;
 
 namespace TestBrusAutomat
 {

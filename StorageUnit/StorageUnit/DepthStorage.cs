@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using StorageUnit.Items;
+﻿using System.Collections.Generic;
+using Storage.Items;
 
-namespace StorageUnit.Storage
+namespace Storage.StorageUnit
 {
     public class DepthStorage
     {

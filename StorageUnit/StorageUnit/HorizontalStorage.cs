@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using StorageUnit.Items;
+using Storage.Items;
 
-namespace StorageUnit.Storage
+namespace Storage.StorageUnit
 {
-    class HorizontalStorage
+    public class HorizontalStorage
     {
         public List<DepthStorage> HorizontalList { get; set; }
         public int Width;

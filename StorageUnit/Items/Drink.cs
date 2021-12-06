@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StorageUnit.Items
+namespace Storage.Items
 {
     public class Drink : IItems
     {
