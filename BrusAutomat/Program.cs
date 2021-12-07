@@ -36,17 +36,18 @@ namespace BrusAutomat
             //Console.WriteLine(firstStorageUnit.FindItemAt(0, 0).Name);
 
             InputHandler.HandleInput.CreateCommands();
-
-            Console.WriteLine(InputHandler.HandleInput.CommandDictionary["ListDrinks"].GetType().GetMethod("Run")
-                .Invoke(InputHandler.HandleInput.CommandDictionary["ListDrinks"], null));
-            //Console.WriteLine(InputHandler.HandleInput.CommandDictionary["ListDrinks"]);
             
+            foreach (var (key, value) in InputHandler.HandleInput.CommandDictionary)
+            {
+                //Console.WriteLine($"Key: {key}\t\tObject of Class: {value}");
+                Console.WriteLine($"Invoked method {key}, returned value:\n{value.GetType().GetMethod("Run")?.Invoke(value, null)}");
+            }
 
             while (Checks.IsRunning)
             {
-                HandleInput.ReadInput();
-                HandleInput.SetResponse();
-                HandleInput.PrintResponse();
+                InputHandler.HandleInput.ReadInput();
+                InputHandler.HandleInput.SetResponse();
+                InputHandler.HandleInput.PrintResponse();
                 
             }
         }
