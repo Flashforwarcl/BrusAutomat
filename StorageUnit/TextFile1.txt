@@ -1,20 +1,43 @@
-﻿        Buissness and logic, decouple!
-        
-        
-        
-        internal string NameItem()
+﻿Usage:
+// Make a list of Drinks
+public static IItems[] ListOfDrinks = {
+    new Drink("Solo", 5),
+    new Drink("Coca Cola", 5),
+    new Drink("Apple Juice")
+};
+public static List<IItems> Drinks = new(ListOfDrinks);
+
+
+//Command class for returning all drinks in list
+using System.Linq;
+using InputHandler;
+using Storage.Items;
+
+namespace BrusAutomat.Commands
+{
+    class ListProducts : ICommands
+    {
+        public string Run()
         {
-            return StringStack.TryPeek(out var result) ? result.Name : "There are no items in this slot";
+            var products = Program.ListOfDrinks.Aggregate<IItems, string>(null, (current, item) => current + $"\n{item.Name}");
+            return $"Here is a list of products:{products}";
         }
 
-        internal string AddItem(int vertical, int horizontal, string item, int cost)
-        {
-            if (StringStack.Count >= Depth) return $"Slot: {vertical}.{horizontal} is full! Cannot add {item}.";
-            StringStack?.Push(new Drink(item, cost));
-            return $"{item} added to slot: {vertical}.{horizontal}";
-        }
-        
-        internal string TakeItem(int vertical, int horizontal)
-        {
-            return StringStack.Count <= 0 ? $"There are no items in slot {vertical}.{horizontal}" : $"Here is your: {StringStack.Pop().Name}";
-        }
+    }
+}
+
+// Adding a storage unit and loopups
+//
+//  Create Unit, takes 3 int parameters.
+//  var UnitName = new Unit(Height, Width, Depth)
+//
+//  Add item at position V:0 H:0 (Drinks[0] is here a "Solo" from the list Drinks)
+//  UnitName.AddItemTo(0, 0, Drinks[0]);
+//
+//  find item at position V:0 H:0
+//  UnitName.FindItemAt(0,0)
+//
+
+var vendingMachine = new Storage.StorageUnit.Unit(5, 5, 5);
+vendingMachine.AddItemTo(0, 0, Drinks[0]);
+Console.WriteLine(vendingMachine.FindItemAt(0, 0).Name);

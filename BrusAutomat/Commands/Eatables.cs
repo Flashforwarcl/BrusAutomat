@@ -2,7 +2,7 @@
 
 namespace BrusAutomat.Commands
 {
-    class Eatables : ICommands
+   public class Eatables : ICommands
     {
         public string Run()
         {

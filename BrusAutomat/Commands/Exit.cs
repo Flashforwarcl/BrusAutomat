@@ -2,12 +2,12 @@
 
 namespace BrusAutomat.Commands
 {
-    class Exit : ICommands
+    public class Exit : ICommands
     {
         public string Run()
         {
             Checks.IsRunning = false;
-            return "exiting";
+            return "exit";
         }
     }
 }

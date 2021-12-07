@@ -1,8 +1,9 @@
-﻿using InputHandler;
+﻿using System;
+using InputHandler;
 
 namespace BrusAutomat.Commands
 {
-    public class ListCommands : ICommands
+    class Help : ICommands
     {
         public string Run()
         {

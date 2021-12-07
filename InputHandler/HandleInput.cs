@@ -32,7 +32,6 @@ namespace InputHandler
             {
                 output = (string) result.GetType().GetMethod("Run")?.Invoke(result, null);
             }
-
             return output;
         }
 

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBrusAutomat", "TestBrus
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Storage", "StorageUnit\Storage.csproj", "{F85684C3-130D-44A0-A0A3-E65C3D31C60F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputHandler", "InputHandler\InputHandler.csproj", "{9277F9D1-AE40-4365-962A-2E125B985D81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InputHandler", "InputHandler\InputHandler.csproj", "{9277F9D1-AE40-4365-962A-2E125B985D81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputHandlerTests", "InputHandlerTests\InputHandlerTests.csproj", "{38265D27-7988-48BE-A546-4A983D5A6BF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9277F9D1-AE40-4365-962A-2E125B985D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9277F9D1-AE40-4365-962A-2E125B985D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9277F9D1-AE40-4365-962A-2E125B985D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38265D27-7988-48BE-A546-4A983D5A6BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38265D27-7988-48BE-A546-4A983D5A6BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38265D27-7988-48BE-A546-4A983D5A6BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38265D27-7988-48BE-A546-4A983D5A6BF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

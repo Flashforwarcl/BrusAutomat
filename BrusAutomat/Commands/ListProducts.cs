@@ -4,11 +4,11 @@ using Storage.Items;
 
 namespace BrusAutomat.Commands
 {
-    class ListProducts : ICommands
+    public class ListProducts : ICommands
     {
         public string Run()
         {
-            var products = Program.ListOfDrinks.Aggregate<IItems, string>(null, (current, item) => current + $"\n{item.Name}");
+            var products = Drinks.DrinkList.Aggregate<IItems, string>(null, (current, item) => current + $"\n{item.Name}");
             return $"Here is a list of products:{products}";
         }
 
