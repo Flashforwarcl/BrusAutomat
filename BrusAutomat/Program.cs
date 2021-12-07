@@ -29,12 +29,11 @@ namespace BrusAutomat
             //  find item at position V:0 H:0
             //  UnitName.FindItemAt(0,0)
             //
-
-            var firstStorageUnit = new Unit(5, 5, 5);
-
-           // firstStorageUnit.AddItemTo(0, 0, Drinks[0]);
-            //Console.WriteLine(firstStorageUnit.FindItemAt(0, 0).Name);
-
+            /*
+            var vendingMachine = new Storage.StorageUnit.Unit(5, 5, 5);
+            vendingMachine.AddItemTo(0, 0, Drinks[0]);
+            Console.WriteLine(vendingMachine.FindItemAt(0, 0).Name);
+            */
             InputHandler.HandleInput.CreateCommands();
 
             while (Checks.IsRunning)

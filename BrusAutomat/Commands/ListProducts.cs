@@ -4,7 +4,7 @@ using Storage.Items;
 
 namespace BrusAutomat.Commands
 {
-    public class ListProducts : ICommands
+    class ListProducts : ICommands
     {
         public string Run()
         {

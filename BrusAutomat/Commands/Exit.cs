@@ -2,11 +2,12 @@
 
 namespace BrusAutomat.Commands
 {
-    class Eatables : ICommands
+    class Exit : ICommands
     {
         public string Run()
         {
-            return "This is an Eatable";
+            Checks.IsRunning = false;
+            return "exiting";
         }
     }
 }

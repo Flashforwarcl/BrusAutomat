@@ -12,6 +12,7 @@ namespace Storage.StorageUnit
             Storage = new VerticalStorage(height, width, depth,new List<HorizontalStorage>(height));
             Storage.CreateVerticalStorage();
         }
+
         public IItems FindItemAt(int vertical,int horizontal)
         {
            return Storage.VerticalList[vertical].HorizontalList[horizontal].CheckItem();

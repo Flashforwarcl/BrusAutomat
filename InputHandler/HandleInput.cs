@@ -26,19 +26,18 @@ namespace InputHandler
 
         public static string InputCommand(string command)
         {
-            string result = null;
-            foreach (var (key, value) in InputHandler.HandleInput.CommandDictionary)
+            var commandAsLower = command.ToLower();
+            var output = "Unknown command.\nTry: listcommands, to show all available commands";
+            if (CommandDictionary.TryGetValue(commandAsLower, out var result))
             {
-                if (key != command) continue;
-                {
-                    result = (string) value.GetType().GetMethod("Run")?.Invoke(value, null);
-                }
+                output = (string) result.GetType().GetMethod("Run")?.Invoke(result, null);
             }
-            return result;
+
+            return output;
         }
 
         public static Dictionary<string, object> CommandDictionary { get; } = new();
-
+ 
         public static void CreateCommands()
         {
             //var assembly = Assembly.GetExecutingAssembly();
@@ -49,13 +48,11 @@ namespace InputHandler
 
             //var assembly = Assembly.GetExecutingAssembly();   // commands using ICommands that are located inside Inputhandler
             var assembly = Assembly.GetCallingAssembly();       // commands using ICommands that are located inside class calling Inputhandler
-
             var typesOfICommands = TypeLoaderExtensions.GetTypesWithInterface(assembly);
             foreach (var command in typesOfICommands)
             {
-                CommandDictionary.Add(command.Name, Activator.CreateInstance(command));  
+                CommandDictionary.Add(command.Name.ToLower(), Activator.CreateInstance(command));  
             }
-            
-        } 
+        }
     }
 }
