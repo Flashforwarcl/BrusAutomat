@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 using Storage.Items;
 
 namespace Storage.StorageUnit
@@ -24,6 +27,28 @@ namespace Storage.StorageUnit
         public IItems TakeItemAt(int vertical, int horizontal)
         {
             return Storage.VerticalList[vertical].HorizontalList[horizontal].TakeItem();
+        }
+
+        public void FindAllItemsAtFrontOfStorage()
+        {
+            string result = null;
+            for (var i = 0; i < Storage.VerticalList[0].HorizontalList.Count; i++)
+            {
+                result += $"\t{i}";
+            }
+            for (var v = 0; v < Storage.VerticalList.Count; v++)
+            {
+                var vList = Storage.VerticalList[v];
+                var vNrAsLetter = 65 + v;
+                result += $"\n{(char)vNrAsLetter}\t";
+                for (var h = 0; h < vList.HorizontalList.Count; h++)
+                {
+                    var t = vList.HorizontalList[h];
+                    //Console.WriteLine(t.CheckItem() != null ? $"{i}.{h} {t.CheckItem().Name}" : $"{i}.{h} Empty");
+                    result += t.CheckItem() != null ? $"{t.CheckItem().Name}\t" : $"Empty\t";
+                }
+            }
+            Console.WriteLine(result);
         }
     }
 }
