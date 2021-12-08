@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Storage.Items;
-
-namespace BrusAutomat
+﻿namespace BrusAutomat
 {
     public class Program
     {
-
         private static void Main()
         {
             //Console.WriteLine(Drinks.DrinkList.Count);
