@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using InputHandler;
 using Storage.Items;
 
 namespace BrusAutomat
@@ -16,9 +18,9 @@ namespace BrusAutomat
         {
             var vendingMachine = new Storage.StorageUnit.Unit(53, 13, 1);
             //Console.WriteLine(Drinks.DrinkList.Count);
-            InputHandler.HandleInput.CreateCommands();
+            CommandGenerator.CreateCommands();
             vendingMachine.AddItemTo(15, 1, Drinks[0]);
-            vendingMachine.FindAllItemsAtFrontOfStorage();
+            Console.WriteLine(vendingMachine.ShowAllItemsAsGrid());
 
             while (Checks.IsRunning)
             {

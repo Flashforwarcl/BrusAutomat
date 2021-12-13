@@ -1,4 +1,4 @@
-﻿namespace BrusAutomat
+﻿namespace InputHandler
 {
     public class Checks
     {

@@ -29,7 +29,7 @@ namespace Storage.StorageUnit
             return Storage.VerticalList[vertical].HorizontalList[horizontal].TakeItem();
         }
 
-        public void FindAllItemsAtFrontOfStorage()
+        public string ShowAllItemsAsGrid()
         {
             var result = StringOfHorisontalStorages();
             var numberOfLetter = 0;
@@ -48,16 +48,14 @@ namespace Storage.StorageUnit
                     result += $"{(char)vNrAsLetter}";
                 }
                 result += "\t";
-                
-                for (var h = 0; h < vList.HorizontalList.Count; h++)
+
+                foreach (var t in vList.HorizontalList)
                 {
-                    var t = vList.HorizontalList[h];
-                    //Console.WriteLine(t.CheckItem() != null ? $"{i}.{h} {t.CheckItem().Name}" : $"{i}.{h} Empty");
                     result += t.CheckItem() != null ? $"{t.CheckItem().Name}\t" : $"Empty\t";
                 }
             }
 
-            Console.WriteLine(result);
+            return result;
         }
 
         private string StringOfHorisontalStorages()

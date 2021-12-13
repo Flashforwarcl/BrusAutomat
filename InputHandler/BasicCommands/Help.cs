@@ -1,13 +1,11 @@
-﻿using InputHandler;
-
-namespace BrusAutomat.Commands
+﻿namespace InputHandler.BasicCommands
 {
-    public class ListCommands : ICommands
+    class Help : ICommands
     {
         public string Run()
         {
             var result = "List of commands:";
-            foreach (var (key, value) in InputHandler.HandleInput.CommandDictionary)
+            foreach (var (key, value) in CommandGenerator.CommandDictionary)
             {
                 result += "\n\t" + key;
             }

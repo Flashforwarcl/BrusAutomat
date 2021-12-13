@@ -1,6 +1,4 @@
-﻿using InputHandler;
-
-namespace BrusAutomat.Commands
+﻿namespace InputHandler.BasicCommands
 {
     public class Exit : ICommands
     {

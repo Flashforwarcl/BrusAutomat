@@ -1,4 +1,5 @@
 using BrusAutomat;
+using InputHandler;
 using NUnit.Framework;
 
 namespace TestBrusAutomat
