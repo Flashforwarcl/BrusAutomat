@@ -14,7 +14,7 @@ namespace BrusAutomat
         public static List<IItems> Drinks = new(ListOfDrinks);
         private static void Main()
         {
-            var vendingMachine = new Storage.StorageUnit.Unit(53, 3, 1);
+            var vendingMachine = new Storage.StorageUnit.Unit(53, 13, 1);
             //Console.WriteLine(Drinks.DrinkList.Count);
             InputHandler.HandleInput.CreateCommands();
             vendingMachine.AddItemTo(15, 1, Drinks[0]);
