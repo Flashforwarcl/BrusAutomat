@@ -20,10 +20,11 @@ namespace InputHandler
             }
         }
 
-        public static IEnumerable<Type> GetTypesWithInterface(Assembly asm)
+        public static IEnumerable<Type> GetTypesWithInterface(Assembly asm, Type iType)
         {
-            var interfaceType = typeof(ICommands);
-            return asm.GetLoadableTypes().Where(interfaceType.IsAssignableFrom).Where(t => t != interfaceType).ToList();
+            //var interfaceType = typeof(iType);
+            return asm.GetLoadableTypes().Where(iType.IsAssignableFrom).Where(t => t != iType).ToList();
         }
     }
+
 }

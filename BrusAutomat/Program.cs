@@ -1,27 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using InputHandler;
-using Storage.Items;
+using Storage;
 
 namespace BrusAutomat
 {
     public class Program
     {
-        // Make a list of Drinks
-        public static IItems[] ListOfDrinks = {
-            new Drink("Solo", 5),
-            new Drink("Coca Cola", 5),
-            new Drink("Apple Juice")
-        };
-        public static List<IItems> Drinks = new(ListOfDrinks);
         private static void Main()
         {
-            var vendingMachine = new Storage.StorageUnit.Unit(53, 13, 1);
+            // Console hack for StorageUnits over 13-Width
+            Console.BufferHeight = 300;
+            Console.BufferWidth = 300;
+            /////////////////////////////////////////////////////
+            
+            var drinks = Drinks.DrinkList;
             //Console.WriteLine(Drinks.DrinkList.Count);
             CommandGenerator.CreateCommands();
-            vendingMachine.AddItemTo(15, 1, Drinks[0]);
-            Console.WriteLine(vendingMachine.ShowAllItemsAsGrid());
-
+            
             while (Checks.IsRunning)
             {
                 InputHandler.HandleInput.ReadInput();
