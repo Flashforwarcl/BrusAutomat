@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Storage.Items;
 
 namespace Storage.StorageUnit
@@ -26,7 +27,7 @@ namespace Storage.StorageUnit
         }
         public string ShowAllItemsAsGrid()
         {
-            var result = StringOfHorisontalStorages();
+            var result = StringOfHorizontalStorage();
             var numberOfLetter = 0;
 
             string WriteNumberOfLetters(int v)
@@ -47,24 +48,17 @@ namespace Storage.StorageUnit
             string GenItemString(int v)
             {
                 var vList = Storage.VerticalList[v];
-                string itemString = null;
-
-                foreach (var t in vList.HorizontalList)
-                {
-                    itemString += t.CheckItem() != null ? $"{t.CheckItem().Name}\t" : $"Empty\t";
-                }
-
-                return itemString;
+                return vList.HorizontalList.Aggregate<DepthStorage, string>(null, (current, t) => current + (t.CheckItem() != null ? $"{t.CheckItem().Name}\t" : $"Empty\t"));
             }
-            string StringOfHorisontalStorages()
+            string StringOfHorizontalStorage()
             {
-                string stringOfStorages = null;
+                string stringOfStorage = null;
                 for (var i = 0; i < Storage.VerticalList[0].HorizontalList.Count; i++)
                 {
-                    stringOfStorages += $"\t{i}";
+                    stringOfStorage += $"\t{i}";
                 }
 
-                return stringOfStorages;
+                return stringOfStorage;
             }
            
             for (var v = 0; v < Storage.VerticalList.Count; v++)

@@ -7,9 +7,6 @@ namespace Storage
     public class AddStorageUnit
     {
         public static Dictionary<string, Unit> StorageDictionary = new();
-
-        //var vendingMachine = new Storage.StorageUnit.Unit(53, 13, 1);
-        //vendingMachine.AddItemTo(15, 1, drinks[0]);
         public static string Create(string name, int height, int width, int depth)
         {
             if (StorageDictionary.ContainsKey(name)) return $"{name} is all ready a storage";
