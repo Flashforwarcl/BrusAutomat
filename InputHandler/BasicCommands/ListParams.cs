@@ -6,7 +6,7 @@ namespace InputHandler.BasicCommands
     {
         public string Run()
         {
-         return HandleInput.ParamListFromInput.Count <= 0 ? null : HandleInput.ParamListFromInput.Aggregate((string) null, (current, s) => current + (s + "\n"));
+         return HandleInput.StringParamsFromInputList.Count <= 0 ? null : HandleInput.StringParamsFromInputList.Aggregate((string) null, (current, s) => current + (s + "\n"));
         }
     }
 }

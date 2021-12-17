@@ -1,6 +1,5 @@
 ﻿using System;
 using InputHandler;
-using Storage;
 
 namespace BrusAutomat
 {
@@ -13,15 +12,15 @@ namespace BrusAutomat
             Console.BufferWidth = 300;
             /////////////////////////////////////////////////////
             
-            var drinks = Drinks.DrinkList;
+            //var drinks = Drinks.DrinkList;
             //Console.WriteLine(Drinks.DrinkList.Count);
             CommandGenerator.CreateCommands();
             
             while (Checks.IsRunning)
             {
-                InputHandler.HandleInput.ReadInput();
-                InputHandler.HandleInput.SetResponse();
-                InputHandler.HandleInput.PrintResponse();
+                HandleInput.ReadInput();
+                HandleInput.SetResponse();
+                HandleInput.PrintResponse();
             }
         }
     }

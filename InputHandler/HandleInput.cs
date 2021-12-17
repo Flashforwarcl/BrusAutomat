@@ -8,7 +8,7 @@ namespace InputHandler
     {
         public static string Input { get; set; }
         public static string Response { get; set; }
-        public static List<string> ParamListFromInput = new();
+        public static List<string> StringParamsFromInputList = new();
         public static void ReadInput()
         {
             Input = Console.ReadLine();
@@ -17,17 +17,17 @@ namespace InputHandler
 
         private static void GetParamsFromInput()
         {
+            StringParamsFromInputList.Clear();
             if (!Input.Contains(" ")) return;
-            //ParamListFromInput.Clear();
-            ParamListFromInput = Input.Split(' ').ToList();
-            if (ParamListFromInput.Count <= 1)
+            StringParamsFromInputList = Input.Split(' ').ToList();
+            if (StringParamsFromInputList.Count <= 1)
             {
-                Input = ParamListFromInput[0];
+                Input = StringParamsFromInputList[0];
             }
             else
             {
-                Input = ParamListFromInput[0];
-                ParamListFromInput.RemoveAt(0);
+                Input = StringParamsFromInputList[0];
+                StringParamsFromInputList.RemoveAt(0);
             }
         }
 
