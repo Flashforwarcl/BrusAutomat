@@ -10,9 +10,9 @@
 
         private static string CreateUnit()
         {
-            if (!int.TryParse(HandleInput.StringParamsFromInputList[1], out var height)) return $"Could not parse height, passes value:{height}";
-            if (!int.TryParse(HandleInput.StringParamsFromInputList[2], out var width)) return $"Could not parse width, passes value:{width}";
-            if (!int.TryParse(HandleInput.StringParamsFromInputList[2], out var depth)) return $"Could not parse depth, passes value:{depth}";
+            if (!int.TryParse(HandleInput.StringParamsFromInputList[1], out var height)) return $"Could not parse height, passed value:{height}";
+            if (!int.TryParse(HandleInput.StringParamsFromInputList[2], out var width)) return $"Could not parse width, passed value:{width}";
+            if (!int.TryParse(HandleInput.StringParamsFromInputList[2], out var depth)) return $"Could not parse depth, passed value:{depth}";
             return Storage.AddStorageUnit.Create(HandleInput.StringParamsFromInputList[0], height, width, depth);
             // return $"StorageUnit:{HandleInput.StringParamsFromInputList[0].ToLower()} with spec:{HandleInput.StringParamsFromInputList[1]}.{HandleInput.StringParamsFromInputList[2]}.{HandleInput.StringParamsFromInputList[3]} was created.";
         }
